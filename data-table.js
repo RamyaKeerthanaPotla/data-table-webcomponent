@@ -69,7 +69,6 @@ class DataTable extends HTMLElement {
     }
   
     async load() {
-      console.log('load', this.src);
       // error handling needs to be done :|
       let result = await fetch(this.src);
       this.data = await result.json();
@@ -87,7 +86,6 @@ class DataTable extends HTMLElement {
     }
   
     render() {
-      console.log('render time', this.data);
       if(!this.cols) this.cols = Object.keys(this.data[0]);
   
       this.renderHeader();
@@ -103,7 +101,6 @@ class DataTable extends HTMLElement {
       }).forEach(c => {
         let r = '<tr>';
         this.cols.forEach(col => {
-            console.log('col', col)
           r += `<td>${c[col]}</td>`;
         });
         r += '</tr>';
@@ -115,7 +112,6 @@ class DataTable extends HTMLElement {
     }
   
     renderHeader() {
-      console.log('render header')
       let header = '<tr>';
       this.cols.forEach(col => {
         header += `<th data-sort="${col}">${col} <img data-sort="${col}" src='./sortIcon.png' style="height:16px;width:16px"/></th>`;
