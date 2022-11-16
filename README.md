@@ -1,4 +1,4 @@
-# data-table-webcomponent
+# Data Table Web Component
 
 #resources:
 # https://developer.mozilla.org/en-US/docs/Web/Web_Components
